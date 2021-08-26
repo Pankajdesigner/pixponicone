@@ -16,6 +16,7 @@
 
 body{
     font-family: 'Nunito', sans-serif;
+    font-weight: 600;
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'Avenir LT Pro 85 Heavy';
@@ -374,7 +375,7 @@ button:focus, .btn-check:focus+.btn, .btn:focus{
     min-width: 190px;
 }
 .farm-details li{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     color: #798DA6;
     list-style: none;
@@ -471,8 +472,7 @@ button:focus, .btn-check:focus+.btn, .btn:focus{
 .table{
     background: #fff;
     font-size: 12px;
-    color: #0E234E;
-    min-width: 1150px;
+    color: #0E234E; 
 }
 .table .btn{
     padding: 4px 9px;
@@ -485,7 +485,13 @@ button:focus, .btn-check:focus+.btn, .btn:focus{
 .table th{
     background: #DEF0FA; 
     font-weight: 600;
-    padding: 8px 5px;
+    padding: 6px 5px; 
+    vertical-align: middle;
+    line-height: 1.2;
+}
+.table td{ 
+    vertical-align: middle;
+    line-height: 1.2;
 }
 .table th.sort{
     position: relative;
@@ -783,6 +789,9 @@ button:focus, .btn-check:focus+.btn, .btn:focus{
     }
     .show-button .add-quality-check, .btn.btn-green.add-plant-btn{
         margin-left: auto !important;
+    }
+    .table{
+        min-width: 1000px;
     }
 }
 
