@@ -25,7 +25,7 @@ a, a:hover{
 }
 
 .login-wp{
-    background: url(../imgs/login-bg.png) no-repeat center;
+    background: url(../imgs/login-bg.jpg) no-repeat center;
     background-size: cover;
     height: 100vh;
     width: 100%;
@@ -146,7 +146,7 @@ a, a:hover{
 
 
 .side-bar{
-    background: url(../imgs/sidebar-bg.png) no-repeat center;
+    background: url(../imgs/sidebar-bg.jpg) no-repeat center;
     background-size: cover;
     position: absolute;
     left: 0px;
@@ -768,5 +768,21 @@ button:focus, .btn-check:focus+.btn, .btn:focus{
         height: 40px;
         line-height: 40px; 
     }  
+    .chart__container{
+        margin-bottom: 10px;
+    }
+    .right-tabs-control{
+        padding: 10px;
+        text-align: center;
+        min-width: 100%;
+        flex-wrap: wrap;
+    }
+    .right-tabs-control .input-group{
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+    .show-button .add-quality-check, .btn.btn-green.add-plant-btn{
+        margin-left: auto !important;
+    }
 }
 
