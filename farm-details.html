@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="imgs/favicon.svg" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css"/>
+    <title>Ponicone</title>
+  </head>
+  <body>
+    
+   
+    <div class="dashboard">
+        <div class="side-bar">
+            <div class="top-sidebar">
+                <img src="imgs/logo-sidebar.png" alt=""> 
+
+                <div class="close-mobile">
+                    <img src="imgs/close-mobile.svg" alt="">
+                </div>
+            </div>
+            <ul>
+                <li class="active">
+                    <a href="dashboard.html">My Farms</a>
+                </li>
+                <li>
+                    <a href="plant-master.html">Plant Master</a>
+                </li>
+                <!-- <li>
+                    <a href="water-quality-check.html">Water Quality Check</a>
+                </li>
+                <li>
+                    <a href="#">Harvest Schedule</a>
+                </li> -->
+            </ul>
+            <div class="copy">
+                © Copyright 2021 Ponicone
+            </div>
+        </div>  
+
+        <div class="main">
+            <header>
+                <button class="sidebar-toggle">
+                    <img src="imgs/menu.svg" alt="">
+                </button>
+                <div class="right-header"> 
+                    <div class="dropdown notification">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="imgs/bell.svg" alt="">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Basic example of a notification.</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Another action</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="yellow"></span> Something else here</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="red"></span> Basic example of a notification.</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Another action</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Something else here</a></li>
+                        </ul>
+                      </div>
+                      <div class="separate"></div>
+                      <div class="dropdown right-user">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img class="user-icon" src="imgs/user.svg" alt=""> <span>Tanmamyee</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton2">
+                          <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                          <li><a class="dropdown-item" href="change-password.html"><i class="fas fa-key"></i> Change Password</a></li>
+                          <li><a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                      </div>
+                </div>
+            </header>
+            <div class="main-section">
+                <!-- dynamic content goes here  -->
+                <!-- <div class="container">
+                    <div class="row"> 
+                        <div class="col-md-12">
+                           <div class="page-header">
+                                <div class="page-title">
+                                    <img src="imgs/myfarm-icon.svg" alt="">
+                                    <span>MY Farm</span>
+                                </div> 
+                           </div>
+                        </div> 
+                    </div>
+                </div> -->
+                
+                <div class="container farm-list-wrapper">
+                    <div class="row"> 
+                        <div class="col-md-12">
+
+                           <div class="farm-list">
+                                <div class="farm-data">
+                                    <div class="farm-cover">
+                                        <img src="imgs/img1.png" alt="">
+                                    </div>
+                                    <div class="farm-details">
+                                        <h1>Birch Wood Ranch</h1>
+                                        <ul>
+                                            <li>Farm ID: 97238</li>
+                                            <li>Location: Madhapar</li>
+                                            <li>Farm Size: 240 Sq. Yards</li>
+                                            <li>Total Plants: 3000</li> 
+                                            <li>Last Water Quality Check: 20-10-2021</li> 
+                                        </ul>
+                                    </div>
+                                </div> 
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="chart__container">
+                                        <span>Temperature - <small style="font-size: 12px; font-weight: 600; color: #798DA6;">Last 24 Hours</small></span>
+                                        <canvas id="chart" width="100%"></canvas>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="chart__container">
+                                        <span>Humidity - <small style="font-size: 12px; font-weight: 600; color: #798DA6;">Last 24 Hours</small></span>
+                                        <canvas id="chart2" width="100%"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="nav nav-tabs m-t-10" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My Plants</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Test Result</button>
+                                </li> 
+                                <div class="right-tabs-control">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search with anything..">
+                                        <button class="btn btn-green">Search</button>  
+                                    </div>
+                                    <button style="min-width: 120px; margin-left: 15px;" class="btn btn-green add-plant-btn" data-bs-toggle="modal" data-bs-target="#asd"><img src="imgs/plus.svg"> Add Plants</button>  
+                                    <button style="min-width: 160px; margin-left: 15px;" class="btn btn-green add-quality-check" data-bs-toggle="modal" data-bs-target="#water"><img src="imgs/plus.svg"> Add Quality Check</button>  
+                                </div>
+                              </ul>
+
+                              <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table align-middle table-bordered table-hover m-0" style="margin-top: 5px !important;">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">S No.</th>
+                                                        <th>Plant Name</th>
+                                                        <th>Plant Category</th>
+                                                        <th class="text-center">Plant ID</th>
+                                                        <th class="text-center">Germination time</th>
+                                                        <th class="text-center">Germination temp.</th>
+                                                        <th class="text-center">Growth time</th>
+                                                        <th class="text-center">Greenhouse Temp.</th>
+                                                        <th class="text-center">Ideal pH</th>
+                                                        <th class="text-center">Attachments</th>
+                                                        <th class="text-center">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">1</td>
+                                                        <td>Romaine Lettuce</td>
+                                                        <td>Lettuce</td>
+                                                        <td class="text-center">1224</td>
+                                                        <td class="text-center">4-5 Days</td>
+                                                        <td class="text-center">25–30 °C</td>
+                                                        <td class="text-center">25–35 days</td>
+                                                        <td class="text-center">16–24 °C</td>
+                                                        <td class="text-center">6–7.5</td>
+                                                        <td class="text-center"><a data-bs-toggle="modal" data-bs-target="#doc" href="#">View</a></td>
+                                                        <td class="text-center"> 
+                                                            
+                                                            <button data-bs-toggle="modal" data-bs-target="#asd" class="btn btn-blue"><i class="fas fa-pencil-alt"></i></button>
+                                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                        </td> 
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">2</td>
+                                                        <td>Tomatoes</td>
+                                                        <td>Lettuce</td>
+                                                        <td class="text-center">1224</td>
+                                                        <td class="text-center">4-5 Days</td>
+                                                        <td class="text-center">25–30 °C</td>
+                                                        <td class="text-center">25–35 days</td>
+                                                        <td class="text-center">16–24 °C</td>
+                                                        <td class="text-center">6–7.5</td>
+                                                        <td class="text-center"><a data-bs-toggle="modal" data-bs-target="#doc" href="#">View</a></td>
+                                                        <td class="text-center"> 
+                                                            
+                                                            <button data-bs-toggle="modal" data-bs-target="#asd" class="btn btn-blue"><i class="fas fa-pencil-alt"></i></button>
+                                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                        </td> 
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">3</td>
+                                                        <td>Basil</td>
+                                                        <td>Lettuce</td>
+                                                        <td class="text-center">1224</td>
+                                                        <td class="text-center">4-5 Days</td>
+                                                        <td class="text-center">25–30 °C</td>
+                                                        <td class="text-center">25–35 days</td>
+                                                        <td class="text-center">16–24 °C</td>
+                                                        <td class="text-center">6–7.5</td>
+                                                        <td class="text-center"><a data-bs-toggle="modal" data-bs-target="#doc" href="#">View</a></td>
+                                                        <td class="text-center"> 
+                                                            
+                                                            <button data-bs-toggle="modal" data-bs-target="#asd" class="btn btn-blue"><i class="fas fa-pencil-alt"></i></button>
+                                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                        </td> 
+                                                    </tr> 
+                                                </tbody>
+                                            </table>
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="row" style="margin: 0; padding: 10px 0;"> 
+                                        <div class="modal-fm-group col-md-3 col-xs-12">
+                                            <label class="col-form-label">From Date</label>
+                                            <input class="form-control"  type="date">
+                                        </div>
+                                        <div class="modal-fm-group col-md-3 col-xs-12">
+                                            <label class="col-form-label">To Date</label>
+                                            <input class="form-control"  type="date">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table align-middle table-bordered table-hover m-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">S No.</th>
+                                                        <th>Farm Name</th>
+                                                        <th class="sort">Farm ID</th>
+                                                        <th class="sort text-center">QC Date/Time</th>
+                                                        <th class="sort text-center">Temp</th>
+                                                        <th class="sort text-center">pH</th>
+                                                        <th class="sort text-center">Dissolved O2</th>
+                                                        <th class="sort text-center">Ammonia</th>
+                                                        <th class="sort text-center">Nitrites</th>
+                                                        <th class="sort text-center">Nitrates</th>
+                                                        <th class="text-center">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">1</td>
+                                                        <td>Birch Wood Ranch</td>
+                                                        <td>3542432</td>
+                                                        <td class="text-center">20-10-2021</td>
+                                                        <td class="text-center">21 °C</td>
+                                                        <td class="text-center">6.7</td>
+                                                        <td class="text-center">4.7</td>
+                                                        <td class="text-center">1 ppm</td>
+                                                        <td class="text-center">16–24 °C</td>
+                                                        <td class="text-center">6–7.5</td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#water"><i class="fas fa-pencil-alt"></i></button>
+                                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                        </td> 
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">2</td>
+                                                        <td>Birch Wood Ranch</td>
+                                                        <td>3542432</td>
+                                                        <td class="text-center">20-10-2021</td>
+                                                        <td class="text-center">21 °C</td>
+                                                        <td class="text-center">6.7</td>
+                                                        <td class="text-center">4.7</td>
+                                                        <td class="text-center">1 ppm</td>
+                                                        <td class="text-center">16–24 °C</td>
+                                                        <td class="text-center">6–7.5</td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#water"><i class="fas fa-pencil-alt"></i></button>
+                                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                        </td> 
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">3</td>
+                                                        <td>Birch Wood Ranch</td>
+                                                        <td>3542432</td>
+                                                        <td class="text-center">20-10-2021</td>
+                                                        <td class="text-center">21 °C</td>
+                                                        <td class="text-center">6.7</td>
+                                                        <td class="text-center">4.7</td>
+                                                        <td class="text-center">1 ppm</td>
+                                                        <td class="text-center">16–24 °C</td>
+                                                        <td class="text-center">6–7.5</td>
+                                                        <td class="text-center">
+                                                            <button class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#water"><i class="fas fa-pencil-alt"></i></button>
+                                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                                        </td> 
+                                                    </tr> 
+                                                </tbody>
+                                            </table>
+                                          </div>
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                              </div>
+ 
+                        </div> 
+                    </div>
+                </div> 
+                <!-- end dynamic content -->
+            </div>
+        </div>
+   </div>
+
+    
+   <div class="modal fade" id="doc" tabindex="-1" aria-labelledby="doc" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><img src="imgs/attachments-icon.svg" alt=""> &nbsp; <span>Attachments</span></h5>
+                    <span class="cls-icon" data-bs-dismiss="modal" aria-label="Close">
+                        <img src="imgs/close.svg" alt="">
+                    </sapn>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table align-middle table-bordered table-hover m-b-0">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">S No.</th>
+                                    <th>Plant Name</th>
+                                    <th></th> 
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Harvest Schedule details_dara_1.pdf</td> 
+                                    <td class="text-center"> 
+                                        <button class="btn btn-green" type="button"> <i class="fas fa-download"></i> Download</button> 
+                                    </td> 
+                                </tr> 
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td>Harvest Schedule details_dara_1.pdf</td> 
+                                    <td class="text-center"> 
+                                        <button class="btn btn-green" type="button"> <i class="fas fa-download"></i> Download</button> 
+                                    </td> 
+                                </tr> 
+                                <tr>
+                                    <td class="text-center">3</td>
+                                    <td>Harvest Schedule details_dara_1.pdf</td> 
+                                    <td class="text-center"> 
+                                        <button class="btn btn-green" type="button"> <i class="fas fa-download"></i> Download</button> 
+                                    </td> 
+                                </tr> 
+                                <tr>
+                                    <td class="text-center">4</td>
+                                    <td>Harvest Schedule details_dara_1.pdf</td> 
+                                    <td class="text-center"> 
+                                        <button class="btn btn-green" type="button"> <i class="fas fa-download"></i> Download</button> 
+                                    </td> 
+                                </tr> 
+                            </tbody>
+                        </table>
+                      </div>
+                </div> 
+        </div>
+    </div>
+    </div>
+
+    <div class="modal fade" id="asd" tabindex="-1" aria-labelledby="doc" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><img src="imgs/plant-icon.svg" alt=""> &nbsp; <span>Plant Profile Data</span></h5>
+                    <span class="cls-icon" data-bs-dismiss="modal" aria-label="Close">
+                        <img src="imgs/close.svg" alt="">
+                    </sapn>
+                </div>
+                <div class="modal-body">
+                    <form action="" class=" ">
+                        <div class="modal-fm-group row">
+                          <div class="col-md-4">
+                            <label class="col-form-label">Plant Category</label>
+                          </div>
+                           <div class="col-md-8">
+                            <select class="form-select">
+                                <option selected value="">Select Category</option>
+                                <option value="">Value</option>
+                                <option value="">Value</option> 
+                            </select>
+                           </div>
+                        </div>
+                        <div class="modal-fm-group row">
+                            <div class="col-md-4">
+                                <label class="col-form-label">Plant Name </label>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-control"  type="text" placeholder="Enter Plant Name ">
+                            </div> 
+                        </div>
+
+                        <div class="modal-fm-group row inside-box">
+                            <h4>Germination</h4>
+                            <div class="col-md-4"><label class="col-form-label">Germination Time</label></div>
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Min Time ">
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Max Time ">
+                            </div> 
+                            <div class="col-md-12" style="height: 10px;"></div>
+                            <div class="col-md-4"><label class="col-form-label">Germination Temp.</label></div>
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Min Temperature">
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Max Temperature">
+                            </div> 
+                        </div>
+
+                        <div class="modal-fm-group row inside-box">
+                            <h4>Growth Time</h4>
+                            <div class="col-md-4"><label class="col-form-label">Growth Time</label></div>
+                            <div class="col-md-8">
+                                <input class="form-control"  type="text" placeholder="Min Time ">
+                            </div> 
+                            <div class="col-md-12" style="height: 10px;"></div>
+                            <div class="col-md-4"><label class="col-form-label" style="line-height: 1;padding-top: 4px;">Days to harvest in germination</label></div> 
+                            <div class="col-md-8">
+                                <input class="form-control"  type="text" placeholder="">
+                            </div> 
+                            <div class="col-md-12" style="height: 10px;"></div>
+                            <div class="col-md-4"><label class="col-form-label" style="line-height: 1;padding-top: 4px;">Days to transplant into system</label></div> 
+                            <div class="col-md-8">
+                                <input class="form-control"  type="text" placeholder="">
+                            </div> 
+                            <div class="col-md-12" style="height: 10px;"></div>
+                            <div class="col-md-4"><label class="col-form-label">Greenhouse Temp.</label></div>
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Min Temperature">
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Max Temperature">
+                            </div> 
+                            <div class="col-md-12" style="height: 10px;"></div>
+                            <div class="col-md-4"><label class="col-form-label">Ideal pH</label></div>
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Min pH">
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Max pH">
+                            </div> 
+                            <div class="col-md-12" style="height: 10px;"></div>
+                            <div class="col-md-4"><label class="col-form-label">Ideal Humidity %</label></div>
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Min">
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Max">
+                            </div> 
+                        </div>
+ 
+                        <div class="modal-fm-group col-md-12">
+                            <label class="col-form-label">Add Attachment<span class="opacity-5"> - Optional</span></label>
+                            <input class="form-control" multiple type="file">
+                        </div>
+                        <div class="modal-fm-group col-md-12">
+                            <label class="col-form-label">Description</label>
+                            <textarea class="form-control text-area" placeholder="Write here..">
+
+                            </textarea>
+                        </div>
+                    </form>
+                </div> 
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <span style="width: 5px;"></span>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>     
+
+    <!-- Modal -->
+    <div class="modal fade" id="water" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><img src="imgs/water.svg" alt=""> &nbsp; <span>Test Result</span></h5>
+                        <span class="cls-icon" data-bs-dismiss="modal" aria-label="Close">
+                            <img src="imgs/close.svg" alt="">
+                        </sapn>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row">
+                            <div class="modal-fm-group col-md-12">
+                                <label class="col-form-label">Select Test Type</label>
+                                <select class="form-select">
+                                    <option selected value="">Select</option>
+                                    <option value="">Values</option>
+                                    <option value="">Values</option>
+                                    <option value="">Values</option>
+                                    <option value="">Values</option>
+                                    <option value="">Values</option>
+                                </select>
+                            </div>
+                            <div class="modal-fm-group row inside-box no-mar">
+                            <div class="modal-fm-group col-md-6">
+                                <label class="col-form-label">Select Date</label>
+                                <input class="form-control"  type="date">
+                            </div>
+                            <div class="modal-fm-group col-md-6">
+                                <label class="col-form-label">Select Time:</label>
+                                <input class="form-control"  type="time">
+                            </div>
+                            <div class="modal-fm-group col-md-6">
+                                <label class="col-form-label">Water pH :</label>
+                                <input class="form-control"  type="text" placeholder="Enter pH">
+                            </div>
+                            <div class="modal-fm-group col-md-6">
+                                <label class="col-form-label">Dissolved Oxygen :</label>
+                                <input class="form-control"  type="text" placeholder="Enter Dissolved Oxygen">
+                            </div>
+                            <div class="modal-fm-group col-md-6">
+                                <label class="col-form-label">Ammonia</label>
+                                <input class="form-control"  type="text" placeholder="Enter Ammonia">
+                            </div>
+                            <div class="modal-fm-group col-md-6">
+                                <label class="col-form-label">Nitrites</label>
+                                <input class="form-control"  type="text" placeholder="Enter Nitrites">
+                            </div>
+                            <div class="modal-fm-group col-md-6">
+                                <label class="col-form-label" style="color: #dc3545;">Nitrates</label>
+                                <input class="form-control"  type="text" placeholder="Enter Nitrates">
+                            </div>
+                            <div class="modal-fm-group col-md-6">
+                                <label class="col-form-label">TDS</label>
+                                <input class="form-control"  type="text" placeholder="TDS">
+                            </div>
+                            <div class="modal-fm-group col-md-12">
+                                <label class="col-form-label">Add Attachment   - <span class="opacity-5">Optional</span></label>
+                                <input class="form-control" multiple type="file">
+                            </div>
+                        </div>
+                            <div class="modal-fm-group col-md-12">
+                                <label class="col-form-label">Notes:</label>
+                                <textarea class="form-control text-area"placeholder="Write here.."></textarea>
+                            </div>
+                            
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <span style="width: 5px;"></span>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+    <script src="https://kit.fontawesome.com/7198d14f0c.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="js/style.js"></script>
+
+    
+      
+  </body>
+</html>

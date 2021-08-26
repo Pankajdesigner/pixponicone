@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="imgs/favicon.svg" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css"/>
+    <title>Ponicone</title>
+  </head>
+  <body>
+    
+   
+    <div class="dashboard">
+        <div class="side-bar">
+            <div class="top-sidebar">
+                <img src="imgs/logo-sidebar.png" alt=""> 
+
+                <div class="close-mobile">
+                    <img src="imgs/close-mobile.svg" alt="">
+                </div>
+            </div>
+            <ul>
+                <li class="">
+                    <a href="dashboard.html">My Farms</a>
+                </li>
+                <li>
+                    <a href="plant-master.html">Plant Master</a>
+                </li>
+                <!-- <li>
+                    <a href="water-quality-check.html">Water Quality Check</a>
+                </li>
+                <li>
+                    <a href="#">Harvest Schedule</a>
+                </li> -->
+            </ul>
+            <div class="copy">
+                © Copyright 2021 Ponicone
+            </div>
+        </div>  
+
+        <div class="main">
+            <header>
+                <button class="sidebar-toggle">
+                    <img src="imgs/menu.svg" alt="">
+                </button>
+                <div class="right-header"> 
+                    <div class="dropdown notification">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="imgs/bell.svg" alt="">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Basic example of a notification.</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Another action</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="yellow"></span> Something else here</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="red"></span> Basic example of a notification.</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Another action</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Something else here</a></li>
+                        </ul>
+                      </div>
+                      <div class="separate"></div>
+                      <div class="dropdown right-user">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img class="user-icon" src="imgs/user.svg" alt=""> <span>Tanmamyee</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton2">
+                          <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
+                          <li><a class="dropdown-item" href="change-password.html"><i class="fas fa-key"></i> Change Password</a></li>
+                          <li><a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                      </div>
+                </div>
+            </header>
+            <div class="main-section">
+                <!-- dynamic content goes here  -->
+                <div class="container">
+                    <div class="row"> 
+                        <div class="col-md-12">
+                           <div class="page-header">
+                                <div class="page-title">
+                                    <img src="imgs/user.svg" alt="">
+                                    <span>My account</span>
+                                </div>
+                                <div class="right-page-header">
+                                    <button class="btn btn-green"><i class="fas fa-cog"></i> &nbsp; <span>Edit</span></button>
+                                </div>
+                           </div>
+                        </div> 
+
+                        <div class="col-md-12">
+                            <div class="profile-wp">    
+                                <div class="row">
+                                <div class="modal-fm-group col-md-3">
+                                    <label class="col-form-label">Username</label>
+                                    <input class="form-control"  type="text" value="Tanmamyee" disabled>
+                                </div>
+                                <div class="modal-fm-group col-md-3">
+                                    <label class="col-form-label">Email</label>
+                                    <input class="form-control"  type="text" value="tanmamyee@pixelvide.com" disabled>
+                                </div> 
+                                <div class="modal-fm-group col-md-3">
+                                    <label class="col-form-label">Mobile</label>
+                                    <input class="form-control"  type="text" value="9980099799" disabled> 
+                                </div>
+                                <div class="modal-fm-group col-md-3">
+                                    <label class="col-form-label">Role</label>
+                                    <input class="form-control"  type="text" value="Operation Manager" disabled>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                            
+
+
+                    </div>
+                </div>
+                 
+
+                <!-- end dynamic content -->
+            </div>
+        </div>
+   </div>
+
+    
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+    <script src="https://kit.fontawesome.com/7198d14f0c.js" crossorigin="anonymous"></script>
+    <script src="js/style.js"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+  </body>
+</html>

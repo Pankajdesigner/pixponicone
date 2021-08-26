@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="imgs/favicon.svg" type="image/x-icon">
+    
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css"/>
+    <title>Ponicone</title>
+  </head>
+  <body>
+    
+   
+    <div class="dashboard">
+        <div class="side-bar">
+            <div class="top-sidebar">
+                <img src="imgs/logo-sidebar.png" alt=""> 
+
+                <div class="close-mobile">
+                    <img src="imgs/close-mobile.svg" alt="">
+                </div>
+            </div>
+            <ul>
+                <li class="active">
+                    <a href="dashboard.html">My Farms</a>
+                </li>
+                <li>
+                    <a href="plant-master.html">Plant Master</a>
+                </li>
+                <!-- <li>
+                    <a href="water-quality-check.html">Water Quality Check</a>
+                </li>
+                <li>
+                    <a href="#">Harvest Schedule</a>
+                </li> -->
+            </ul>
+            <div class="copy">
+                © Copyright 2021 Ponicone
+            </div>
+        </div>  
+
+        <div class="main">
+            <header>
+                <button class="sidebar-toggle">
+                    <img src="imgs/menu.svg" alt="">
+                </button>
+                <div class="right-header"> 
+                    <div class="dropdown notification">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="imgs/bell.svg" alt="">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="dropdownMenuButton1">
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Basic example of a notification.</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Another action</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="yellow"></span> Something else here</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="red"></span> Basic example of a notification.</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Another action</a></li>
+                          <li><a class="dropdown-item" href="#"><span class="green"></span> Something else here</a></li>
+                        </ul>
+                      </div>
+                      <div class="separate"></div>
+                      <div class="dropdown right-user">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img class="user-icon" src="imgs/user.svg" alt=""> <span>Tanmamyee</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="dropdownMenuButton2">
+                          <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                          <li><a class="dropdown-item" href="change-password.html"><i class="fas fa-key"></i> Change Password</a></li>
+                          <li><a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                      </div>
+                </div>
+            </header>
+            <div class="main-section">
+                <!-- dynamic content goes here  -->
+                <div class="container">
+                    <div class="row"> 
+                        <div class="col-md-12">
+                           <div class="page-header">
+                                <div class="page-title">
+                                    <img src="imgs/myfarm-icon.svg" alt="">
+                                    <span>MY Farm</span>
+                                </div>
+                                <div class="right-page-header">
+                                    <button class="btn btn-green" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="imgs/plus.svg" alt=""> <span>Add Farm</span></button>
+                                </div>
+                           </div>
+                        </div> 
+                    </div>
+                </div>
+                
+                <div class="container farm-list-wrapper">
+                    <div class="row"> 
+                        <div class="col-md-12">
+
+                           <div class="farm-list">
+                                <div class="farm-data">
+                                    <div class="farm-cover">
+                                        <img src="imgs/img1.png" alt="">
+                                    </div>
+                                    <div class="farm-details">
+                                        <h1>Birch Wood Ranch</h1>
+                                        <ul>
+                                            <li>Farm ID: 97238</li>
+                                            <li>Location: Madhapar</li>
+                                            <li>Farm Size: 240 Sq. Yards</li>
+                                            <li>Total Plants: 3000</li> 
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="farm-action">
+                                    <button class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Farm</button>
+                                    <a href="farm-details.html" class="btn btn-green">View Farm</a>
+                                </div> 
+                            </div>
+
+                            <div class="farm-list">
+                                <div class="farm-data">
+                                    <div class="farm-cover">
+                                        <img src="imgs/img2.png" alt="">
+                                    </div>
+                                    <div class="farm-details">
+                                        <h1>Blueberry Hill</h1>
+                                        <ul>
+                                            <li>Farm ID: 97238</li>
+                                            <li>Location: Madhapar</li>
+                                            <li>Farm Size: 240 Sq. Yards</li>
+                                            <li>Total Plants: 3000</li> 
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="farm-action">
+                                    <button class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Farm</button>
+                                    <a href="farm-details.html" class="btn btn-green">View Farm</a>
+                                </div> 
+                            </div>
+
+                            <div class="farm-list">
+                                <div class="farm-data">
+                                    <div class="farm-cover">
+                                        <img src="imgs/img3.png" alt="">
+                                    </div>
+                                    <div class="farm-details">
+                                        <h1>Cedar Tree Hollow</h1>
+                                        <ul>
+                                            <li>Farm ID: 97238</li>
+                                            <li>Location: Madhapar</li>
+                                            <li>Farm Size: 240 Sq. Yards</li>
+                                            <li>Total Plants: 3000</li> 
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="farm-action">
+                                    <button class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Farm</button>
+                                    <a href="farm-details.html" class="btn btn-green">View Farm</a>
+                                </div> 
+                            </div>
+
+                            <div class="farm-list">
+                                <div class="farm-data">
+                                    <div class="farm-cover">
+                                        <img src="imgs/img4.png" alt="">
+                                    </div>
+                                    <div class="farm-details">
+                                        <h1>Dandelion Orchard</h1>
+                                        <ul>
+                                            <li>Farm ID: 97238</li>
+                                            <li>Location: Madhapar</li>
+                                            <li>Farm Size: 240 Sq. Yards</li>
+                                            <li>Total Plants: 3000</li> 
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="farm-action">
+                                    <button class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Farm</button>
+                                    <a href="farm-details.html" class="btn btn-green">View Farm</a>
+                                </div> 
+                            </div>
+
+                            <div class="farm-list">
+                                <div class="farm-data">
+                                    <div class="farm-cover">
+                                        <img src="imgs/img5.png" alt="">
+                                    </div>
+                                    <div class="farm-details">
+                                        <h1>Blueberry Hill</h1>
+                                        <ul>
+                                            <li>Farm ID: 97238</li>
+                                            <li>Location: Madhapar</li>
+                                            <li>Farm Size: 240 Sq. Yards</li>
+                                            <li>Total Plants: 3000</li> 
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="farm-action">
+                                    <button class="btn btn-blue" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit Farm</button>
+                                    <a href="farm-details.html" class="btn btn-green">View Farm</a>
+                                </div> 
+                            </div>
+
+                           
+
+
+                        </div> 
+                    </div>
+                </div>
+
+                
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><img src="imgs/myfarm-icon.svg" alt=""> &nbsp; <span>Add Farm</span></h5>
+                                    <span class="cls-icon" data-bs-dismiss="modal" aria-label="Close">
+                                        <img src="imgs/close.svg" alt="">
+                                    </sapn>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="row">
+                                        <div class="modal-fm-group col-md-6">
+                                        <label class="col-form-label">Farm Name</label>
+                                        <input class="form-control"  type="text" placeholder="Enter Farm Name">
+                                        </div>
+                                        <div class="modal-fm-group col-md-6">
+                                            <label class="col-form-label">Farm location</label>
+                                            <input class="form-control"  type="text" placeholder="Enter Farm location">
+                                        </div>
+                                        <div class="modal-fm-group col-md-6">
+                                            <label class="col-form-label">Farm Size</label>
+                                            <input class="form-control"  type="text" placeholder="Enter Farm Size">
+                                        </div>
+                                        <div class="modal-fm-group col-md-6">
+                                            <label class="col-form-label">Measurement Units</label>
+                                            <select class="form-select">
+                                                <option selected value="">Sq Yards</option>
+                                                <option value="">Values</option>
+                                                <option value="">Values</option>
+                                                <option value="">Values</option>
+                                                <option value="">Values</option>
+                                                <option value="">Values</option>
+                                            </select>
+                                        </div>
+                                        <div class="modal-fm-group col-md-12">
+                                            <label class="col-form-label">Upload Picture - <span class="opacity-5">Optional</span></label>
+                                            <input class="form-control" multiple type="file">
+                                        </div>
+                                        <div class="modal-fm-group col-md-12">
+                                            <label class="col-form-label">Description</label>
+                                            <textarea class="form-control text-area"></textarea>
+                                        </div>
+                                        
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                    <span style="width: 5px;"></span>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save Farm</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end dynamic content -->
+            </div>
+        </div>
+   </div>
+
+    
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
+    <script src="https://kit.fontawesome.com/7198d14f0c.js" crossorigin="anonymous"></script>
+    <script src="js/style.js"></script>
+
+    <script>
+        new WOW().init();
+    </script>
+  </body>
+</html>
